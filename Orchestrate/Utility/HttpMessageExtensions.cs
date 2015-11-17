@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
+using Orchestrate.Io.Extensibility;
 using Orchestrate.Io.Utility;
 
 namespace Orchestrate.Io
@@ -20,7 +21,7 @@ namespace Orchestrate.Io
             message.Headers.IfNoneMatch.Add(new EntityTagHeaderValue("\"*\""));
         }
 
-        public static void AddContent<T>(this HttpRequestMessage message, T item, JsonSerializer serializer)
+        public static void AddContent<T>(this HttpRequestMessage message, T item, IJsonSerializer serializer)
         {
             var json = serializer.SerializeObject(item);
             message.Content = new StringContent(json, Encoding.UTF8, "application/json");

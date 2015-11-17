@@ -55,6 +55,7 @@
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\PatchConflictException.cs" />
     <Compile Include="Exceptions\RequestException.cs" />
+    <Compile Include="Extensibility\IJsonSerializer.cs" />
     <Compile Include="Options\HistoryOptions.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="Options\LinkOptions.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Models\SearchItem.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Options\SearchOptions.cs" />
+    <Compile Include="Utility\DefaultJsonSerializer.cs" />
     <Compile Include="Utility\EnvironmentHelper.cs" />
     <Compile Include="Utility\Guard.cs" />
     <Compile Include="Utility\HttpMessageExtensions.cs" />
@@ -75,7 +77,6 @@
     <Compile Include="Models\KvObject.cs" />
     <Compile Include="Models\KvMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\JsonSerializerExtensions.cs" />
     <Compile Include="Utility\RequestExceptionUtility.cs" />
     <Compile Include="DataCenter.cs" />
     <Compile Include="Utility\RestClient.cs" />

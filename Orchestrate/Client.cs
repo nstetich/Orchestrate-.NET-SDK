@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Orchestrate.Io.Extensibility;
 using Orchestrate.Io.Utility;
 
 namespace Orchestrate.Io
@@ -8,14 +9,14 @@ namespace Orchestrate.Io
     public class Client
     {
         readonly IApplication application;
-        JsonSerializer serializer;
+        IJsonSerializer serializer;
         RestClient restClient;
 
-        public Client(IApplication application) : this(application, JsonSerializer.CreateDefault())
+        public Client(IApplication application) : this(application, new DefaultJsonSerializer())
         {
         }
 
-        public Client(IApplication application, JsonSerializer serializer)
+        public Client(IApplication application, IJsonSerializer serializer)
         {
             this.application = application;
             this.serializer = serializer;

@@ -4,15 +4,16 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Orchestrate.Io.Extensibility;
 
 namespace Orchestrate.Io.Utility
 {
     public class RestClient
     {
         private readonly string apiKey;
-        private readonly JsonSerializer serializer;
+        private readonly IJsonSerializer serializer;
 
-        public RestClient(string apiKey, JsonSerializer serializer)
+        public RestClient(string apiKey, IJsonSerializer serializer)
         {
             this.apiKey = apiKey;
             this.serializer = serializer;

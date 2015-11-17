@@ -1,14 +1,15 @@
 ﻿using Newtonsoft.Json;
+using Orchestrate.Io.Extensibility;
 using Orchestrate.Io.Utility;
 
 namespace Orchestrate.Io
 {
     public class KvObject<T> : KvMetadata
     {
-        JsonSerializer serializer;
+        IJsonSerializer serializer;
         public string RawValue { get; private set; }
 
-        public KvObject(string content, string collectionName, string key, string reference, string location, JsonSerializer serializer)
+        public KvObject(string content, string collectionName, string key, string reference, string location, IJsonSerializer serializer)
             : base(collectionName, key, reference, location)
         {
             this.serializer = serializer;

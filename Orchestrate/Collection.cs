@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Orchestrate.Io.Extensibility;
 using Orchestrate.Io.Utility;
 
 namespace Orchestrate.Io
@@ -11,7 +12,7 @@ namespace Orchestrate.Io
     public class Collection
     {
         string host;
-        JsonSerializer serializer;
+        IJsonSerializer serializer;
         string apiKey;
         RestClient restClient;
 
@@ -20,7 +21,7 @@ namespace Orchestrate.Io
         public Collection(string collectionName, 
                           string apiKey,
                           string host,
-                          JsonSerializer serializer)
+                          IJsonSerializer serializer)
         {
             this.apiKey = apiKey;
             this.host = host;
